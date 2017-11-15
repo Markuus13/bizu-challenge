@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <router-view/>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'app',
+  created() {
+    axios.get('https://api.github.com/users/defunkt').then((response) => {
+      console.log(response.data);
+    });
+  },
 };
 </script>
 
