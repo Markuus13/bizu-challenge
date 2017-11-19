@@ -1,5 +1,5 @@
 <template>
-  <el-footer class="footer">
+  <el-footer class="footer hidden-xs-only">
     <span class="footer-text">Created by <a href="https://github.com/Markuus13/" target="_blank">
       Marcus Vinícius <i class="el-icon-location"></i></a></span>
   </el-footer>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'footer',
+  name: 'foot',
 };
 </script>
 

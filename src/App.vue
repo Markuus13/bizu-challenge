@@ -3,17 +3,17 @@
     <el-main>
       <router-view/>
     </el-main>
-    <Footer/>
+    <Foot/>
   </el-container>
 </template>
 
 <script>
-import Footer from './components/Footer';
+import Foot from './components/Foot';
 
 export default {
   name: 'app',
   components: {
-    Footer
+    Foot,
   },
 };
 </script>
