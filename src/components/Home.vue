@@ -1,32 +1,31 @@
 <template>
-  <el-row>
-    <el-col :span="16" :offset="4">
-      <section class="container-content">
-        <p class="description-text">This application provides a GitHub interface. It shows your profile, repositories
-        and also help manage issues in repositories! Before start click on the button bellow to get authenticated
-        by Github.</p>
-        <div style="text-align:center">
-          <el-button class="auth-button" icon="el-icon-d-arrow-right" round>Authenticate</el-button>
-        </div>
-      </section>
-    </el-col>
-  </el-row>
+  <section id="home">
+    <p class="description-text">This application provides a GitHub interface. It shows your profile, repositories
+    and also help manage issues in repositories! Before start click on the button bellow to get authenticated
+    by Github.</p>
+    <div style="text-align:center">
+      <el-button @click="githubAuth" class="auth-button" icon="el-icon-d-arrow-right" round>Authenticate</el-button>
+    </div>
+  </section>
 </template>
 
 <script>
+import ContentContainer from './ContentContainer'
+
 export default {
   name: 'Home',
+  components: {
+    ContentContainer
+  },
+  methods: {
+    githubAuth: () => {
+      window.location.href = 'https://github.com/login/oauth/authorize?scope=user,repo&client_id=3c854ec250d614af9d69';
+    },
+  }
 };
 </script>
 
 <style scoped>
-.container-content {
-    margin-top: 60px;
-    border: 3px solid #D8DCE5;
-    border-radius: 10px;
-    padding: 20px 25px;
-}
-
 .description-text {
   font-size: 20px;
   text-align: center;
