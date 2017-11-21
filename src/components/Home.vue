@@ -4,24 +4,25 @@
     and also help manage issues in repositories! Before start click on the button bellow to get authenticated
     by Github.</p>
     <div style="text-align:center">
-      <el-button @click="githubAuth" class="auth-button" icon="el-icon-d-arrow-right" round>Authenticate</el-button>
+      <el-button @click="signIn" class="auth-button" icon="el-icon-d-arrow-right" round>Sign in with GitHub</el-button>
     </div>
   </section>
 </template>
 
 <script>
-import ContentContainer from './ContentContainer'
+import ContentContainer from './ContentContainer';
+import auth from '../auth';
 
 export default {
-  name: 'Home',
+  name: 'home',
   components: {
-    ContentContainer
+    ContentContainer,
   },
   methods: {
-    githubAuth: () => {
-      window.location.href = 'https://github.com/login/oauth/authorize?scope=user,repo&client_id=3c854ec250d614af9d69';
+    signIn() {
+      auth.signIn();
     },
-  }
+  },
 };
 </script>
 
@@ -31,7 +32,6 @@ export default {
   text-align: center;
   color: #2D2F33;
 }
-
 .auth-button {
   margin-top: 20px;
   font-size: 18px;
