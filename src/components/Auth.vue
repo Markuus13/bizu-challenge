@@ -1,5 +1,4 @@
 <template>
-  <span>oi</span>
 </template>
 
 <script>
