@@ -1,5 +1,8 @@
 <template>
   <el-container id="app">
+    <el-header>
+      <NavBar/>
+    </el-header>
     <el-main>
       <el-row>
         <el-col :span="16" :offset="4">
@@ -14,12 +17,14 @@
 </template>
 
 <script>
-import Foot from './components/Foot';
+import NavBar from './components/NavBar';
 import ContentContainer from './components/ContentContainer';
+import Foot from './components/Foot';
 
 export default {
   name: 'app',
   components: {
+    NavBar,
     ContentContainer,
     Foot,
   },

@@ -5,7 +5,7 @@
     <router-link style="text-decoration: none;" :to="{ name: 'Repositories' }"><el-menu-item index="2">
       Repositories</el-menu-item></router-link>
     <el-menu-item index="3">Search</el-menu-item>
-    <el-menu-item index="4" @click="logout">Logout</el-menu-item>
+    <el-menu-item class="right-aligned" index="4" @click="logout">Logout</el-menu-item>
   </el-menu>
 </template>
 
@@ -31,4 +31,8 @@ export default {
 </script>
 
 <style scoped>
+.right-aligned {
+  float: right;
+  margin-right: 10px;
+}
 </style>

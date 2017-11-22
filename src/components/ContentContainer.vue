@@ -1,18 +1,12 @@
 <template>
   <section id="container-content">
-    <NavBar/>
     <slot></slot>
   </section>
 </template>
 
 <script>
-import NavBar from './NavBar';
-
 export default {
   name: 'ContentContainer',
-  components: {
-    NavBar,
-  }
 };
 </script>
 
