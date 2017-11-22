@@ -31,7 +31,7 @@ export default {
      });
   },
 
-  signOut(context) {
+  logout(context) {
     localStorage.removeItem('access_token');
     this.user.authenticated = false;
     context.$router.push('/');
