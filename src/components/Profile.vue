@@ -1,6 +1,6 @@
 <template>
   <section>
-    <img :src="user.avatar_url" :alt="user.name" width="150" class="test"/>
+    <img :src="user.avatar_url" :alt="user.name" width="150" style="border-radius:10px;"/>
     <h2>{{ user.name }}</h2>
     <h1>{{ user.login }}</h1>
     <p>{{ user.bio }}</p>
@@ -30,7 +30,4 @@ export default {
 </script>
 
 <style scoped>
-.test {
-  border-radius: 10px;
-}
 </style>

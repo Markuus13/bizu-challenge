@@ -4,6 +4,7 @@ import Home from '@/components/Home';
 import Auth from '@/components/Auth';
 import Profile from '@/components/Profile';
 import Repositories from '@/components/Repositories';
+import Repository from '@/components/Repository';
 
 Vue.use(Router);
 
@@ -29,6 +30,12 @@ export default new Router({
       path: '/repositories',
       name: 'Repositories',
       component: Repositories,
+    },
+    {
+      path: '/repository/:full_name',
+      name: 'Repository',
+      component: Repository,
+      props: true,
     },
   ],
 });
