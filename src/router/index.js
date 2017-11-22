@@ -5,6 +5,7 @@ import Auth from '@/components/Auth';
 import Profile from '@/components/Profile';
 import Repositories from '@/components/Repositories';
 import Repository from '@/components/Repository';
+import IssueForm from '@/components/IssueForm';
 
 Vue.use(Router);
 
@@ -35,6 +36,12 @@ export default new Router({
       path: '/repository/:full_name',
       name: 'Repository',
       component: Repository,
+      props: true,
+    },
+    {
+      path: '/repository/:full_name/issues/new',
+      name: 'IssueForm',
+      component: IssueForm,
       props: true,
     },
   ],

@@ -11,7 +11,9 @@
     <p>Watchers count: {{ repository.watchers_count }}</p>
     <p>Open Issues: {{ repository.open_issues }}</p>
     <p>Has issues: {{ repository.has_issues }}</p>
-    <el-button type="warning" icon="el-icon-warning ">Create issue</el-button>
+    <router-link :to="{ name: 'IssueForm', params: { full_name: repository.full_name } }">
+      <el-button type="warning" icon="el-icon-warning ">Create issue</el-button>
+    </router-link>
   </section>
 </template>
 
