@@ -21,7 +21,9 @@ export default {
     };
   },
   mounted() {
-    this.axios.get(`https://api.github.com/user?access_token=${localStorage.getItem('access_token')}`, auth.getAuthHeader())
+    this.axios.get(`https://api.github.com/user`, {
+        headers: auth.getAuthHeader(),
+      })
       .then((result) => {
         this.user = result.data;
       });

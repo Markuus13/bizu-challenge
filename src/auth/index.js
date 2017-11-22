@@ -48,7 +48,7 @@ export default {
 
   getAuthHeader() {
     return {
-      'Authorization': `token ${localStorage.getItem('access_token')}`,
+      Authorization: `token ${localStorage.getItem('access_token')}`,
     };
   },
 };
