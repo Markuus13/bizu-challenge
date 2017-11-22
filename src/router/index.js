@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import Auth from '@/components/Auth';
 import Profile from '@/components/Profile';
+import Repositories from '@/components/Repositories';
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile,
+    },
+    {
+      path: '/repositories',
+      name: 'Repositories',
+      component: Repositories,
     },
   ],
 });

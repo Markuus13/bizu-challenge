@@ -1,6 +1,6 @@
 <template>
-  <section style="margin-top: 20px">
-    <img :src="user.avatar_url" :alt="user.name" width="150" class="test">
+  <section>
+    <img :src="user.avatar_url" :alt="user.name" width="150" class="test"/>
     <h2>{{ user.name }}</h2>
     <h1>{{ user.login }}</h1>
     <p>{{ user.bio }}</p>
