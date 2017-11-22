@@ -1,30 +1,27 @@
-# y
+# Bizu Challenge
 
 > A Vue.js project that communicates with GitHub REST API
 
-## Build Setup
+## Run Project
 
 ``` bash
 # install dependencies
 npm install
 
+# start gatekeeper server (run before 'npm run dev')
+npm run gatekeeper
+
 # serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
 # run unit tests
 npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Why gatekeeper is necessary?
+
+Because of some security-related limitations, Github prevents you from implementing the OAuth Web Application Flow on a client-side only application. Without gatekeeper we'll get [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) problems.
+
+## So, what is gatekeeper?
+
+It's just a node server that runs in same domain as Bizu Challenge application that  is configured with CORS headers to allow cross origin access. More info on [gatekeeper repository](https://github.com/prose/gatekeeper).
