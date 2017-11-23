@@ -1,8 +1,8 @@
 <template>
   <section>
-    <img :src="user.avatar_url" :alt="user.name" width="150" style="border-radius:10px;"/>
     <h2>{{ user.name }}</h2>
-    <h1>{{ user.login }}</h1>
+    <img :src="user.avatar_url" :alt="user.name" width="150" style="border-radius:10px;"/>
+    <h1>@{{ user.login }}</h1>
     <p>{{ user.bio }}</p>
     <p>{{ user.company }}</p>
     <p>{{ user.email }}</p>
@@ -21,12 +21,12 @@ export default {
     };
   },
   mounted() {
-    this.axios.get(`https://api.github.com/user`, {
-        headers: auth.getAuthHeader(),
-      })
-      .then((result) => {
-        this.user = result.data;
-      });
+    this.axios.get('https://api.github.com/user', {
+      headers: auth.getAuthHeader(),
+    })
+    .then((result) => {
+      this.user = result.data;
+    });
   },
 };
 </script>

@@ -3,6 +3,20 @@ import axios from 'axios';
 const SCOPE = 'user,repo';
 const CLIENT_ID = '3c854ec250d614af9d69';
 
+function notifyError(context) {
+  context.$notify.error({
+    title: 'Authentication failed!',
+    message: 'Invalid code :(',
+  });
+}
+
+function notifySuccess(context) {
+  context.$notify.success({
+    title: 'Authenticated with success!',
+    message: 'Enjoy :)',
+  });
+}
+
 export default {
   user: {
     authenticated: false,
@@ -52,17 +66,3 @@ export default {
     };
   },
 };
-
-function notifyError(context) {
-  context.$notify.error({
-    title: 'Authentication failed!',
-    message: 'Invalid code :(',
-  });
-}
-
-function notifySuccess(context) {
-  context.$notify.success({
-    title: 'Authenticated with success!',
-    message: 'Enjoy :)',
-  });
-}

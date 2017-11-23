@@ -12,21 +12,18 @@
         </el-col>
       </el-row>
     </el-main>
-    <Foot/>
   </el-container>
 </template>
 
 <script>
-import NavBar from './components/NavBar';
 import ContentContainer from './components/ContentContainer';
-import Foot from './components/Foot';
+import NavBar from './components/NavBar';
 
 export default {
   name: 'app',
   components: {
-    NavBar,
     ContentContainer,
-    Foot,
+    NavBar,
   },
 };
 </script>

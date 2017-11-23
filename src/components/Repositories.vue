@@ -5,12 +5,19 @@
       <el-table-column prop="name" label="Name" width="180" sortable>
         <template slot-scope="scope">
           <router-link :to="{ name: 'Repository', params: { full_name: scope.row.full_name } }">
-            {{ scope.row.name }}
+              {{ scope.row.name }}
           </router-link>
         </template>
       </el-table-column>
       <el-table-column prop="language" label="Language" width="180"></el-table-column>
       <el-table-column prop="open_issues" label="Open Issues" width="180"></el-table-column>
+      <el-table-column label="Check issues" width="180">
+        <template slot-scope="scope">
+          <router-link :to="{ name: 'Repository', params: { full_name: scope.row.full_name } }">
+              <el-button type="warning" icon="el-icon-view" plain></el-button>
+          </router-link>
+        </template>
+      </el-table-column>
     </el-table>
   </section>
 </template>
@@ -26,12 +33,12 @@ export default {
     };
   },
   mounted() {
-    this.axios.get(`https://api.github.com/user/repos`, {
-        headers: auth.getAuthHeader(),
-      })
-      .then((result) => {
-        this.repos = result.data;
-      });
+    this.axios.get('https://api.github.com/user/repos', {
+      headers: auth.getAuthHeader(),
+    })
+    .then((result) => {
+      this.repos = result.data;
+    });
   },
 };
 </script>
